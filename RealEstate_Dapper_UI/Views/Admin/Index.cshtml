@@ -19,7 +19,13 @@
             @await Component.InvokeAsync("_AdminLayoutNavbarComponentPartial")
 
             <div class="container-fluid pt-4 px-4">
-                @RenderBody()
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="bg-light rounded h-100 p-4">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
             </div>
 
             @await Component.InvokeAsync("_AdminLayoutFooterComponentPartial")
