@@ -3,60 +3,68 @@
     ViewData["Title"] = "CreateProduct";
     Layout = "~/Views/Admin/Index.cshtml";
 }
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
 
-<h6 class="mb-4">Yeni İlan Ekleme Sayfası</h6>
-<form method="Post">
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <label>İlan Başlığı</label>
-            <input type="text" asp-for="title" class="form-control" />
-            <br />
-        </div>
-        <div class="col-md-6">
-            <label>Kategori</label>
-            @Html.DropDownListFor(x=>x.categoryId,(List<SelectListItem>)ViewBag.category,new {@class="form-control"})
-            <br />
-        </div>
-    </div>
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <label>Şehir</label>
-            <input type="text" asp-for="city" class="form-control" />
-            <br />
-        </div>
-        <div class="col-md-6">
-            <label>İlçe</label>
-            <input type="text" asp-for="district" class="form-control" />
-            <br />
-        </div>
-        
-    </div>
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <label>Tür</label>
-            <input type="text" asp-for="title" class="form-control" />
-            <br />
-        </div>
-        <div class="col-md-6">
-            <label>Fiyat</label>
-            <input type="text" asp-for="title" class="form-control" />
-            <br />
-        </div>
-        
-    </div>
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <label>Kapak Fotoğrafı</label>
-            <input type="text" asp-for="coverImage" class="form-control" />
-            <br />
-        </div>
-        <div class="col-md-6">
-            <label>Açık Adres</label>
-            <textarea asp-for="address" class="form-control" rows="5"></textarea>
-            <br />
-        </div>
+                <h6 class="mb-4">Yeni İlan Ekleme Sayfası</h6>
+                <form method="Post">
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label>İlan Başlığı</label>
+                            <input type="text" asp-for="title" class="form-control" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Kategori</label>
+                            @Html.DropDownListFor(x => x.categoryId, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label>Şehir</label>
+                            <input type="text" asp-for="city" class="form-control" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <label>İlçe</label>
+                            <input type="text" asp-for="district" class="form-control" />
+                            <br />
+                        </div>
 
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label>Tür</label>
+                            <input type="text" asp-for="title" class="form-control" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fiyat</label>
+                            <input type="text" asp-for="title" class="form-control" />
+                            <br />
+                        </div>
+
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label>Kapak Fotoğrafı</label>
+                            <input type="text" asp-for="coverImage" class="form-control" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Açık Adres</label>
+                            <textarea asp-for="address" class="form-control" rows="5"></textarea>
+                            <br />
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-primary">İlanı Oluştur</button>
+                </form>
+            </div>
+        </div>
     </div>
-    
-    <button class="btn btn-primary">İlanı Oluştur</button>
-</form>
+</div>
