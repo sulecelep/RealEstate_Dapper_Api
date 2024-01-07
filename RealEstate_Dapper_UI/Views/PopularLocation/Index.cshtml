@@ -7,16 +7,15 @@
 
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
-        <div class="col-12">
+        <div class="col-12 ">
             <div class="bg-light rounded h-100 p-4">
 
                 <h6 class="mb-4">Popüler Lokasyonlar</h6>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" >
                         <thead>
-                            <tr>
+                            <tr >
                                 <th scope="col">#</th>
-                                <th scope="col">Resim</th>
                                 <th scope="col">Şehir</th>
                                 <th scope="col">Sil</th>
                                 <th scope="col">Güncelle</th>
@@ -28,10 +27,9 @@
                             @foreach (var item in Model)
                             {
                                 count++;
-                                <tr >
+                                <tr>
                                     <th scope="row">@count</th>
-                                    <td><img src="@item.ImageUrl" style="width:150px; height:100px;" /> </td>
-                                    <td>@item.CityName</td>
+                                    <td><img src="@item.ImageUrl" style="width:50px; height:50px; border-radius:50%;" />   @item.CityName </td>
 
                                     <td><a href="/PopularLocation/DeletePopularLocation/@item.LocationID" class="btn btn-outline-danger">Sil</a></td>
                                     <td><a href="/PopularLocation/UpdatePopularLocation/@item.LocationID" class="btn btn-outline-success">Güncelle</a></td>
