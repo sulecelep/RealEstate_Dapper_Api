@@ -33,6 +33,16 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
             }
         }
 
+        public async Task<List<ResultLast5ProductWithCategoryDto>> GetLast5ProductAsync()
+        {
+            string query = "Select Top(5) ProductID,Title,Price,City,District,CategoryName,AdvertisementDate From Product inner join Category on Product.ProductCategory=Category.CategoryID where Type='Kiralık' order by ProductID desc ";
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultLast5ProductWithCategoryDto>(query);
+                return values.ToList();
+            }
+        }
+
         public async Task ProductDealOfTheDayStatusChangeToFalse(int id)
         {
             string query = "Update Product Set DealOfTheDay='False' where ProductID=@productID";
@@ -57,23 +67,6 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
             }
         }
 
-        public async Task UpdateProduct(UpdateProductDto updateProductDto)
-        {
-            //string query = "Update Product Set Name=@name, Title= @title, Mail=@mail, PhoneNumber=@phoneNumber, ImageUrl= @imageUrl, Status= @status where EmployeeID=@employeeID";
-            //var parameters = new DynamicParameters();
-            //parameters.Add("@name", updateProductDto.);
-            //parameters.Add("@title", updateProductDto.Title);
-            //parameters.Add("@mail", updateProductDto.Mail);
-            //parameters.Add("@phoneNumber", updateProductDto.PhoneNumber);
-            //parameters.Add("@imageUrl", updateProductDto.ImageUrl);
-            //parameters.Add("@status", updateProductDto.Status);
-            //parameters.Add("@employeeID", updateProductDto.EmployeeID);
-            //using (var connection = _context.CreateConnection())
-            //{
-            //    await connection.ExecuteAsync(query, parameters);
-            //}
-            throw new NotImplementedException();
 
-        }
     }
 }
